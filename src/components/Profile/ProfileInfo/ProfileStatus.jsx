@@ -1,10 +1,6 @@
 import React from 'react'
-import s from './ProfileInfo.module.css'
-
-
 
 class ProfileStatus extends React.Component {
-
     state = {
         editMode: false,
         status: this.props.status
@@ -26,12 +22,9 @@ class ProfileStatus extends React.Component {
         this.setState({
             status: event.currentTarget.value
         })
-
-
     }
 
     componentDidUpdate(prevProps, prevState) {
-        
         if (prevProps.status !== this.props.status) {
             this.setState({
                 status: this.props.status
@@ -44,19 +37,26 @@ class ProfileStatus extends React.Component {
         // console.log('render')
         return (
             <div>
-                {!this.state.editMode &&
+                {!this.state.editMode && (
                     <div>
-                        <span onClick={this.activateEditMode}>{this.props.status || 'set your status'}</span>
+                        <span onClick={this.activateEditMode}>
+                            {this.props.status || 'set your status'}
+                        </span>
                     </div>
-                }
-                {this.state.editMode &&
+                )}
+                {this.state.editMode && (
                     <div>
-                        <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} value={this.state.status} />
+                        <input
+                            onChange={this.onStatusChange}
+                            autoFocus={true}
+                            onBlur={this.deactivateEditMode}
+                            value={this.state.status}
+                        />
                     </div>
-                }
+                )}
             </div>
         )
     }
 }
 
-export default ProfileStatus;
+export default ProfileStatus

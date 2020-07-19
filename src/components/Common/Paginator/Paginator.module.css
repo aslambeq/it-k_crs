@@ -1,16 +1,24 @@
+
+
+.pages {
+    color: #747474;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 1rem;
+}
+
+.pageNumber {
+    padding: 0.7rem;
+    border: 1px solid #747474;
+    cursor: pointer
+}
+
 .selectedPage {
     font-weight: bold;
     color: aquamarine;
     margin: 5px;
     font-size: 30px;
-}
-
-.pages {
-    letter-spacing: 0.7rem;
-    color: #747474;
-    font-size: 20px;
-    font-weight: bolder;
-    margin: 1rem;
+    border: 1px solid aquamarine
 }
 
 .button {
