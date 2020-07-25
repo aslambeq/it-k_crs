@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import userPhoto from '../../../assets/images/user.jpg'
 import Preloader from '../../Common/Preloader/Preloader'
 import s from './ProfileInfo.module.css'
-import ProfileStatusHOC from './ProfileStatusHOC'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 import ProfileDataForm from './ProfileDataForm'
 
 const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile }) => {
@@ -50,7 +50,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
                     />
                 )}
 
-                <ProfileStatusHOC status={status} updateStatus={updateStatus} />
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
             </div>
         </div>
     )

@@ -5,7 +5,6 @@ import { savePhoto } from '../../../redux/profile-reducer'
 import s from './ProfileInfo.module.css'
 import styles from '../../Common/FormsControls/FormsControls.module.css'
 
-
 const ProfileDataForm = ({ handleSubmit, profile, error }) => {
     // {createField(name, placeholder, validators, component, type, text = '')}
     return (
@@ -34,7 +33,10 @@ const ProfileDataForm = ({ handleSubmit, profile, error }) => {
                 {Object.keys(profile.contacts).map((key) => {
                     return (
                         <div key={key} className={s.contact}>
-                            <b>{key}: {createField('contacts.' + key, key, null, Textarea, null, null)}</b>
+                            <b>
+                                {key}:{' '}
+                                {createField('contacts.' + key, key, null, Textarea, null, null)}
+                            </b>
                         </div>
                     )
                 })}
