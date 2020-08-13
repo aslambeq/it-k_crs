@@ -89,11 +89,3 @@ export default MainApp
 // <BrowserRouter basename={process.env.PUBLIC_URL}> || <HashRouter> - github pages deploy
 
 // <Route path='/profile' component={Profile} />  || <Route path ='/profile' render={() => <Profile />}
-
-
-git_desktop test_1
-
-test 2
-
-test 3
-test 3.1
