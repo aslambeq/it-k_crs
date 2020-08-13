@@ -19,11 +19,31 @@ const LoginForm: React.FC<
         <form onSubmit={handleSubmit}>
             {/* createField(name, placeholder, validators, component, type, text = '') */}
             {createField<LoginFormValuesTypeKeys>('email', 'Email', [requiredField], Input, null)}
-            {createField<LoginFormValuesTypeKeys>('password', 'Password', [requiredField], Input, 'password')}
-            {createField<LoginFormValuesTypeKeys>('rememberMe', undefined, null, Input, 'checkbox', 'remember me')}
+            {createField<LoginFormValuesTypeKeys>(
+                'password',
+                'Password',
+                [requiredField],
+                Input,
+                'password'
+            )}
+            {createField<LoginFormValuesTypeKeys>(
+                'rememberMe',
+                undefined,
+                null,
+                Input,
+                'checkbox',
+                'remember me'
+            )}
 
             {captchaURL && <img src={captchaURL} />}
-            {captchaURL && createField<LoginFormValuesTypeKeys>('captcha', 'insert symbols', [requiredField], Input, {})}
+            {captchaURL &&
+                createField<LoginFormValuesTypeKeys>(
+                    'captcha',
+                    'insert symbols',
+                    [requiredField],
+                    Input,
+                    {}
+                )}
 
             {error && <div className={styles.formSummaryError}>{error}</div>}
             <div>
@@ -52,7 +72,6 @@ export type LoginFormValuesType = {
     captcha: string
 }
 type LoginFormValuesTypeKeys = Extract<keyof LoginFormValuesType, string>
-
 
 const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmitFunction = (formData: LoginFormValuesType) => {

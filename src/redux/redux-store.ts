@@ -1,6 +1,6 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore, Action } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import thunkMiddleware from 'redux-thunk'
+import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import appReducer from './app-reducer'
 import authReducer from './auth-reducer'
 import dialogsReducer from './dialogs-reducer'
@@ -21,6 +21,11 @@ const rootReducer = combineReducers({
 type RootReducerType = typeof rootReducer // (golbalState: GLOBALSTATE) => GLOBALSTATE
 export type AppStateType = ReturnType<RootReducerType>
 
+export type InferActionsTypes<T> = T extends { [keys: string]: (...args: any[]) => infer U} ? U : never
+
+export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
+
+// @ts-ignore
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 // @ts-ignore
 window.store = store
