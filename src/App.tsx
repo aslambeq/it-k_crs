@@ -90,7 +90,11 @@ export default MainApp
 
 // <Route path='/profile' component={Profile} />  || <Route path ='/profile' render={() => <Profile />}
 
+<<<<<<< HEAD
 
 git_desktop test_1
 
 test 2
+=======
+git desktop test
+>>>>>>> ca9c13661d4f61acb88c2876c8740c7dc961b320
