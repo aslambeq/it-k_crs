@@ -8,7 +8,6 @@ let state = {
     ],
     profile: null,
     status: '',
-    newPostText: ''
 }
 
 it('posts array lentgh should be incremented', () => {

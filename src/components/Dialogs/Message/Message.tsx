@@ -1,19 +1,22 @@
-import React from 'react';
-import s from './../Dialogs.module.css';
+import React from 'react'
+import s from './../Dialogs.module.css'
 
-const Message = (props) => {
+type PropsType = {
+    message: string
+}
 
-    let sendMessageElement = React.createRef();
+const Message: React.FC<PropsType> = (props) => {
+    /* let sendMessageElement = React.createRef();
 
     function sendMessage () {
         let sndmsg = sendMessageElement.current.value;
         alert (sndmsg)
-    }
+    } */
 
     return (
         <div>
             {<div className={s.dialog}>{props.message}</div>}
-{/*             <div>
+            {/*             <div>
                 <textarea ref={sendMessageElement}></textarea>
             </div>
             <div>
@@ -23,4 +26,4 @@ const Message = (props) => {
     )
 }
 
-export default Message;
+export default Message

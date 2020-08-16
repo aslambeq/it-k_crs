@@ -29,7 +29,7 @@ const Dialogs: React.FC<PropsType> = (props) => {
         props.sendMessage(values.newMessageBody)
     }
 
-    if (!props.isAuth) return <Redirect to={'/login'} />
+    // if (!props.isAuth) return <Redirect to={'/login'} />
 
     return (
         <div className={s.dialogs}>

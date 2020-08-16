@@ -3,7 +3,15 @@ import cat from './img/cat_lineal.png';
 import s from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+export type MapStatePropsType = {
+    isAuth: boolean
+    login: string | null
+}
+export type MapDispatchPropsType = {
+    logout: () => void
+}
+
+const Header: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     return (
         <header className={s.header} >
             <img src={cat} />

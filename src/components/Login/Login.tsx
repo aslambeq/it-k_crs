@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { login } from '../../redux/auth-reducer'
 import { requiredField } from '../../utils/validators/validators'
-import { Input, createField } from '../Common/FormsControls/FormsControls'
+import { Input, createField, GetStringTypeKeys } from '../Common/FormsControls/FormsControls'
 import styles from '../Common/FormsControls/FormsControls.module.css'
 import { AppStateType } from '../../redux/redux-store'
 
@@ -71,7 +71,7 @@ export type LoginFormValuesType = {
     rememberMe: boolean
     captcha: string
 }
-type LoginFormValuesTypeKeys = Extract<keyof LoginFormValuesType, string>
+type LoginFormValuesTypeKeys = GetStringTypeKeys<LoginFormValuesType>
 
 const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmitFunction = (formData: LoginFormValuesType) => {

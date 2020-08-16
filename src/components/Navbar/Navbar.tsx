@@ -2,12 +2,7 @@ import React from 'react';
 import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom'
 
-// let c1 = "item";
-// let c2 = "active";
-// let classes = {c1 + " " + c2};
-// let classes = {`${s.c1} ${s.c2}`};
-
-const Navbar = () => {
+const Navbar: React.FC = () => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>

@@ -18,6 +18,9 @@ import store, { AppStateType } from './redux/redux-store'
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
+const SuspendedProfile = withSuspense(ProfileContainer)
+const SuspendedDialogs = withSuspense(DialogsContainer)
+
 type MapPropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
     initializeApp: () => void
@@ -48,8 +51,8 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
                 <div className='app-wrapper-content'>
                     <Switch>
                         <Redirect exact from='/' to='/profile' />
-                        <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)} />
-                        <Route path='/dialogs' render={withSuspense(DialogsContainer)} />
+                        <Route path='/profile/:userId?' render={() => <SuspendedProfile />} />
+                        <Route path='/dialogs' render={() => <SuspendedDialogs />} />
                         <Route
                             path='/users'
                             render={() => <UsersContainer pageTitle={'user list'} />}
