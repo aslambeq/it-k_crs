@@ -5,12 +5,12 @@ import { compose } from 'redux'
 import './App.css'
 import Preloader from './components/Common/Preloader/Preloader'
 import HeaderContainer from './components/Header/HeaderContainer'
-import Login from './components/Login/Login'
+import { Login } from './components/Login/Login'
 import Music from './components/Music/Music'
 import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 import Settings from './components/Settings/Settings'
-import UsersContainer from './components/Users/UsersContainer'
+import { UsersPage } from './components/Users/UsersContainer'
 import { withSuspense } from './hoc/withSuspense'
 import { initializeApp } from './redux/app-reducer'
 import store, { AppStateType } from './redux/redux-store'
@@ -53,10 +53,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
                         <Redirect exact from='/' to='/profile' />
                         <Route path='/profile/:userId?' render={() => <SuspendedProfile />} />
                         <Route path='/dialogs' render={() => <SuspendedDialogs />} />
-                        <Route
-                            path='/users'
-                            render={() => <UsersContainer pageTitle={'user list'} />}
-                        />
+                        <Route path='/users' render={() => <UsersPage pageTitle={'user list'} />} />
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />
