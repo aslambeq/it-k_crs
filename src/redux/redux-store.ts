@@ -25,16 +25,16 @@ export type InferActionsTypes<T> = T extends { [keys: string]: (...args: any[]) 
 
 export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
 
-// @ts-ignore
+/* // @ts-ignore
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 // @ts-ignore
-window.store = store
+window.store = store */
 
 // ↓↓ redux chrome dev extension ↓↓
-/* // @ts-ignore
+// @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)))
 // @ts-ignore
-window.__store__ = store */
+window.__store__ = store
 
 export default store
