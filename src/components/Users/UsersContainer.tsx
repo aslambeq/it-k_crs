@@ -5,17 +5,17 @@ import Preloader from '../Common/Preloader/Preloader'
 import { Users } from './Users'
 
 type UsersPagePropsType = {
-    pageTitle: string
+  pageTitle: string
 }
 
-export const UsersPage: React.FC<UsersPagePropsType> = (props) => {
-    const isFetching = useSelector(getIsFetching)
+export const UsersPage: React.FC<UsersPagePropsType> = props => {
+  const isFetching = useSelector(getIsFetching)
 
-    return (
-        <>
-            <h2>{props.pageTitle}</h2>
-            {isFetching ? <Preloader /> : null}
-            <Users />
-        </>
-    )
+  return (
+    <>
+      <h2>{props.pageTitle}</h2>
+      {isFetching ? <Preloader /> : null}
+      <Users />
+    </>
+  )
 }

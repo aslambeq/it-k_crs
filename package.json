@@ -15,6 +15,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/react-test-renderer": "^16.9.3",
     "@types/redux-form": "^8.2.7",
+    "antd": "^4.7.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "formik": "^2.1.5",
